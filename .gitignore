@@ -1,4 +1,2 @@
-cpputest/lib/libCppUTest.a
-cpputest/lib/libCppUTestExt.a
-
+*.a
 my_project/test
