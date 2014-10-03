@@ -9,4 +9,4 @@ OUTPUT = test
 $(OUTPUT): AllTests.cpp add_test.cpp
 	$(COMPILER) -o $(OUTPUT) AllTests.cpp add_test.cpp -I$(CPPUTEST_INCLUDE) -L$(CPPUTEST_LIB) -lCppUTest
 clean: 
-	rm $(OUTPUT)
+	rm -f $(OUTPUT)
