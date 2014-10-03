@@ -1,8 +1,8 @@
 COMPILER = g++
 
-CPPUTEST_LIB = ../cpputest/lib
-CPPUTEST_INCLUDE = ../cpputest/include
+CPPUTEST_HOME = ../cpputest
+CPPUTEST_LIB = $(CPPUTEST_HOME)/lib
+CPPUTEST_INCLUDE = $(CPPUTEST_HOME)/include
 
 test: AllTests.cpp add_test.cpp
-#	g++ AllTests.cpp add_test.cpp -I../cpputest/include -L../cpputest/lib/ -lCppUTEst
-	g++ AllTests.cpp add_test.cpp -I$(CPPUTEST_INCLUDE) -L$(CPPUTEST_LIB) -lCppUTest
+	$(COMPILER) AllTests.cpp add_test.cpp -I$(CPPUTEST_INCLUDE) -L$(CPPUTEST_LIB) -lCppUTest
