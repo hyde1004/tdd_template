@@ -4,5 +4,6 @@ CPPUTEST_HOME = ../cpputest
 CPPUTEST_LIB = $(CPPUTEST_HOME)/lib
 CPPUTEST_INCLUDE = $(CPPUTEST_HOME)/include
 
-test: AllTests.cpp add_test.cpp
-	$(COMPILER) AllTests.cpp add_test.cpp -I$(CPPUTEST_INCLUDE) -L$(CPPUTEST_LIB) -lCppUTest
+OUTPUT = test
+$(OUTPUT): AllTests.cpp add_test.cpp
+	$(COMPILER) -o $(OUTPUT) AllTests.cpp add_test.cpp -I$(CPPUTEST_INCLUDE) -L$(CPPUTEST_LIB) -lCppUTest
