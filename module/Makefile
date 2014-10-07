@@ -15,8 +15,10 @@ OUTPUT = unittest
 
 $(OUTPUT): $(TEST_DIR) $(CODE_DIR)
 	$(info Compiling...)
-	$(COMPILER) -o $(OUTPUT) $(TEST_DIR) $(CODE_DIR) -I$(CODE_INCLUDE) -I$(CPPUTEST_INCLUDE) -L$(CPPUTEST_LIB) -lCppUTest
+	@$(COMPILER) -o $(OUTPUT) $(TEST_DIR) $(CODE_DIR) -I$(CODE_INCLUDE) -I$(CPPUTEST_INCLUDE) -L$(CPPUTEST_LIB) -lCppUTest
+
 clean: 
-	rm -f $(OUTPUT)
+	$(info Cleaning...)
+	@rm -f $(OUTPUT)
 
 
