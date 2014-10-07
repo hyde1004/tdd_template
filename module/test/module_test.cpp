@@ -1,11 +1,11 @@
 #include "CppUTest/TestHarness.h"
 
-TEST_GROUP(Add)
+TEST_GROUP(Module)
 {
 
 };
 
-TEST(Add, Create)
+TEST(Module, Fail)
 {
 	FAIL("Fail me!");
 }

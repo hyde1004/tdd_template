@@ -1,15 +1,21 @@
 COMPILER = g++
 
-CPPUTEST_HOME = ../cpputest
+#CPPUTEST_HOME should be exported!
 CPPUTEST_LIB = $(CPPUTEST_HOME)/lib
 CPPUTEST_INCLUDE = $(CPPUTEST_HOME)/include
 
-TEST_SRC = AllTests.cpp	\
-	add_test.cpp
+TEST_DIR = test/AllTests.cpp	\
+	test/module_test.cpp
 
-OUTPUT = test
+CODE_DIR = src/module.c
 
-$(OUTPUT): $(TEST_SRC)
-	$(COMPILER) -o $(OUTPUT) $(TEST_SRC) -I$(CPPUTEST_INCLUDE) -L$(CPPUTEST_LIB) -lCppUTest
+CODE_INCLUDE = src
+
+OUTPUT = unittest
+
+$(OUTPUT): $(TEST_DIR) $(CODE_DIR)
+	$(COMPILER) -o $(OUTPUT) $(TEST_DIR) $(CODE_DIR) -I$(CODE_INCLUDE) -I$(CPPUTEST_INCLUDE) -L$(CPPUTEST_LIB) -lCppUTest
 clean: 
 	rm -f $(OUTPUT)
+
+
